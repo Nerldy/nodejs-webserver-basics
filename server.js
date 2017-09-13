@@ -1,6 +1,6 @@
 const express = require("express");
 const hbs = require("hbs");
-
+const port = process.env.PORT || 3000;
 const app = express();
 
 
@@ -17,8 +17,6 @@ app.use((req, res, next) => {
 hbs.registerHelper("year", () => {
     return new Date().getFullYear();
 });
-
-
 
 
 app.get("/", (request, response) => {
@@ -42,4 +40,6 @@ app.get("/bad", (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Server started in port ${port}`);
+});
