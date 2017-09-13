@@ -18,9 +18,7 @@ hbs.registerHelper("year", () => {
     return new Date().getFullYear();
 });
 
-app.use((req, res, next) => {
-    res.render("construction");
-});
+
 
 
 app.get("/", (request, response) => {
